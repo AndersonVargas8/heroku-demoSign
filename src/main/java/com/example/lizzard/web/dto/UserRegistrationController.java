@@ -22,7 +22,7 @@ public class UserRegistrationController {
         return "registration";
     }
 
-    @PostMapping
+    @PostMapping("/registration")
     public String registerUserAccount(@ModelAttribute("user")UserRegistrationDto registrationDto){
         userService.save(registrationDto);
         return "redirect:/registration?success";
