@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@Controller
+@RequestMapping("/registration")
 public class UserRegistrationController {
     private UserService userService;
 
@@ -17,7 +18,7 @@ public class UserRegistrationController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public String showRegistrationForm(){
         return "registration";
     }
