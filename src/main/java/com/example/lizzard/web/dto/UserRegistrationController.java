@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-@RequestMapping("/registration")
-@CrossOrigin
+@RequestMapping
 public class UserRegistrationController {
     private UserService userService;
 
@@ -26,7 +25,7 @@ public class UserRegistrationController {
         return "registration";
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public String registerUserAccount(@ModelAttribute("user")UserRegistrationDto registrationDto){
         userService.save(registrationDto);
         return "redirect:/registration?success";
